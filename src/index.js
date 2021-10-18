@@ -11,6 +11,11 @@ app.use(express.json());
 
 app.use(router)
 
+app.get("/status", (req, res)=>{
+  res.json({
+    message:"Server is running"
+  })
+})
 app.listen(3000, () => {
   console.log("Server is running");
 });
