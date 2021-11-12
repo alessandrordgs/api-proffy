@@ -3,7 +3,6 @@ const Proffy = require("../models/Proffy");
 async function listProffy(request, response) {
   try {
     const proffy = await Proffy.findAll();
-    console.log(proffy);
     response.status(200).json(proffy);
   } catch (error) {
     response.status(400).json({
@@ -34,33 +33,20 @@ async function proffy(request, response) {
 async function createProffy(request, response) {
   try {
     const {
-      name,
-      link_foto,
-      phone_number,
-      biography,
-      theme,
-      amount,
-      weekdays,
-      startHour,
-      endHour,
+      nome,
+      email,
+      telefone,
     } = request.body;
 
     const proffy = await Proffy.create({
-      name,
-      link_foto,
-      phone_number,
-      biography,
-      theme,
-      amount,
-      weekdays,
-      startHour,
-      endHour,
+      nome,
+      email,
+      telefone,
     });
 
-    response.status(201).json({ message: "O professor foi criado:", proffy });
+    response.status(201).json({ message: "o usuario foi criado:", proffy });
   } catch (error) {
     console.log(error);
-
     response.status(400).json({
       message: "deu erro em algum campo",
     });
