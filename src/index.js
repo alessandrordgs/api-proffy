@@ -16,6 +16,6 @@ app.get("/status", (req, res)=>{
     message:"Server is running"
   })
 })
-app.listen(3000, () => {
+app.listen(8080, () => {
   console.log("Server is running");
 });
